@@ -2,30 +2,45 @@ var express = require("express");
 
 var router = express.Router();
 
-var burger = require("../models/burger.js");
+var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  burger.selectAll(function(resFromQuery) {
+  db.burger.findAll({}).then(function(results) {
+    // results are available to us inside the .then
+
     var hbsObject = {
-      burgers: resFromQuery
+      burgers: results
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/", function(req, res) {
-  burger.insertOne("name", req.body.name, function() {
-    res.redirect("/");
+  db.burger.create({
+    name: req.body.name
   });
+  // .then(function(results){
+    
+  //   // res.json(results);
+  // });
+  res.redirect("/");
 });
 
 router.put("/:id", function(req, res) {
-
-  burger.updateOne("devoured", 1, req.params.id, function() {
+  db.burger.update({
+      devoured: 1
+    },{
+      where: {
+        id: req.params.id
+      }
+    });
+  // .then(function(results) {
+  //     res.redirect("/");
+  //   });
+  // burger.updateOne("devoured", 1, req.params.id, function() {
     res.redirect("/");
-  });
+  // });
 });
 
 

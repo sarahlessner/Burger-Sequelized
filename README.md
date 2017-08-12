@@ -2,7 +2,7 @@
 
 ### Overview
 
-A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM
+A burger logger with MySQL, Node, Express, Handlebars using Sequelize ORM
 
 * Eat All the Burgers is a restaurant app that lets users input the names of burgers they'd like to eat.
 

@@ -1,24 +1,25 @@
-var orm = require("../config/orm.js");
 
-//call ORM functions with burger input
-
-var burger = {
-  selectAll: function(cbFromController) {
-    orm.selectAll("burgers", function(resFromQuery) {
-      cbFromController(resFromQuery);
-    });
-  },
-  insertOne: function(cols, vals, cbFromController) {
-    orm.insertOne("burgers", cols, vals, function(res) {
-      cbFromController(res);
-    });
-  },
-  updateOne: function(colToSearch, objColValues, id, cbFromController) {
-    orm.updateOne("burgers", colToSearch, objColValues, id, function(res) {
-      cbFromController(res);
-    });
-  }
+module.exports = function (sequelize, DataTypes) {
+  var Burger = sequelize.define("burger", {
+    name: {
+      type: DataTypes.STRING,
+      // validate: {
+      //   allowNull: false,
+      //   len: [1,100]
+      // }
+    }, 
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+  });
+  return Burger;
 };
 
-// Export the database functions for the controller "burgersController.js).
-module.exports = burger;
+// module.exports = function (sequelize, DataTypes) {
+//   return sequelize.define("consumer", {
+//     name: DataTypes.STRING,
+//     rating: DataTypes.INTEGER
+//   });
+// }
+
