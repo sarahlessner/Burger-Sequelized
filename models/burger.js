@@ -4,8 +4,8 @@ module.exports = function (sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       validate: {
-        allowNull: false,
-        len: [1,100]
+        notEmpty: true,
+        len: [5,75]
       }
     }, 
     devoured: {
@@ -16,10 +16,5 @@ module.exports = function (sequelize, DataTypes) {
   return Burger;
 };
 
-// module.exports = function (sequelize, DataTypes) {
-//   return sequelize.define("consumer", {
-//     name: DataTypes.STRING,
-//     rating: DataTypes.INTEGER
-//   });
-// }
+
 
