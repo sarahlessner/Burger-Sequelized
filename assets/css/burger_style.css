@@ -5,7 +5,6 @@ body {
 
 h2, h3{
 	font-family: 'Ubuntu', sans-serif;
-
 }
 
 .jumbotron,
@@ -34,11 +33,11 @@ h2, h3{
 }
 .img1 {
 	top: 10px;
-	left: 20px;	
+	left: 20px;
 }
 .img2 {
 	top: 20px;
-	left: 380px;	
+	left: 380px;
 }
 .img3 {
 	top: 80px;
@@ -46,7 +45,7 @@ h2, h3{
 }
 .img4 {
 	top: 0;
-	right: 220px;	
+	right: 220px;
 }
 .img5 {
 	top: 0;
@@ -54,14 +53,13 @@ h2, h3{
 }
 .img6 {
 	top: 0;
-	right: 20px;	
+	right: 20px;
 }
 
 .panel {
 	/*background: #dff7f2;*/
 	margin-bottom: 10px;
 }
-
 
 hr,
 .page-header {
@@ -96,7 +94,6 @@ li .burger-name {
 .tbd li {
 	list-style: none;
 	font-size: 20px;
-
 }
 
 .tbd hr:last-child {
@@ -128,13 +125,8 @@ li .burger-name {
 	outline: 0;
 }
 
-/*input:focus {
-	outline: 0;
-}*/
-
 #ca::placeholder {
 	font-size: 30px;
-
 }
 
 .burger-name {
@@ -142,11 +134,9 @@ li .burger-name {
 	font-size: 30px;
 }
 
-
-
 @media screen and (max-width: 1200px) {
 
-	
+
 	.tbd,
 	.devoured {
 		max-width: none;
